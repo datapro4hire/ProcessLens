@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}ProcessLens - ECM Plugin{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-4">
+                    <i class="fas fa-eye me-3"></i>ProcessLens
+                </h1>
+                <p class="lead mb-5">
+                    Advanced Enterprise Content Management plugin for streamlined document processing and workflow automation.
+                </p>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-light btn-lg px-4 me-3">
+                        <i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn btn-light btn-lg px-4 me-3">
+                        <i class="fab fa-github me-2"></i>Login with GitHub
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Document Management</h5>
+                        <p class="card-text">
+                            Efficiently organize, store, and retrieve documents with advanced search capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-cogs fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Workflow Automation</h5>
+                        <p class="card-text">
+                            Streamline business processes with automated workflows and approval systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+                        <h5 class="card-title">Security & Compliance</h5>
+                        <p class="card-text">
+                            Enterprise-grade security with role-based access control and audit trails.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
